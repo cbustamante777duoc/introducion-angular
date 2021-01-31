@@ -7,7 +7,7 @@ import { Component} from '@angular/core';
 export class ListadoComponent  {
   heroes:string[] = ['spiderman','hulk','thor','antman'];
   heroeBorrado:string = '';
-  mostrar:boolean = true;
+  
 
 
 
@@ -15,8 +15,6 @@ export class ListadoComponent  {
   //o un string vacio
   borrarHeroe(){
     this.heroeBorrado =  this.heroes.shift() || '';
-    if (this.heroes.length ==0) {
-      this.mostrar = false;
-    }
+    
   }
 }
