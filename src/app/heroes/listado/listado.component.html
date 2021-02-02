@@ -1,10 +1,17 @@
 <p>listado de heroes</p>
 <div>
-    <h3 *ngIf=" heroeBorrado !== '' ">
+    <!-- ejecuta condicion if sino crea un variable noborrado-->
+    <h3 *ngIf=" heroeBorrado !== '' ; else noBorrado " >
         heroe borrado :<small>{{heroeBorrado}}</small>
     </h3>
-    
 </div>
+
+<!--ejecucion del else-->
+<ng-template #noBorrado>
+    <h3>No se ha borrado ningun Heroe</h3>
+</ng-template>
+
+
 
 <button (click)="borrarHeroe()">
     borrar heroe
