@@ -3,38 +3,16 @@
 
 <div class="row">
     <div class="col">
-        <!-- recibe la varible data del hijo -->
-        <app-personajes [data]="personajes">
-        </app-personajes>
+        <!-- envia la varible data del hijo -->
+        <app-personajes ></app-personajes>
         
     </div>
     <div class="col">
-        <h3>Agregar </h3>
-        <hr>
-
-        <!--ngsubmit evita que se recarge la pagina-->
-        <form (ngSubmit)="Agregar()">
-
-            <input
-             type="text" 
-             placeholder="Nombre"
-             name="nombre"
-            [(ngModel)]="nuevo.nombre"
-            />
-            
-            <input
-            type="number" 
-             placeholder="poder"
-             name="poder"
-            [(ngModel)]="nuevo.poder"
-             />
-
-            <button type="submit">
-                Agregar
-            </button>
-        </form>
+        <!--las variables personajes y nuevos son enviadas a agregar-->
+        <app-agregar 
+        [nuevo] = "nuevo"
+        ></app-agregar>
         
     </div>
-    nombre: {{nuevo.nombre}}
-    poder : {{nuevo.poder}}
+ 
 </div>
